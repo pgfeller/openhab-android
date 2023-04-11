@@ -288,11 +288,16 @@
             android:exported="false" />
 
         <service
+            android:name=".core.location.LocationService"
+            android:enabled="true"
+            android:foregroundServiceType="location"/>
+
+        <service
             android:name="androidx.work.impl.foreground.SystemForegroundService"
             android:directBootAware="false"
             android:enabled="@bool/enable_system_foreground_service_default"
             android:exported="false"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="dataSync|location"
             tools:targetApi="n"
             tools:ignore="Instantiatable" />
 
